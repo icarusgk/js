@@ -18,7 +18,7 @@ let spaceship = {
       name: "Clementine",
       degree: "Physics",
       announce() {
-        console.log(`Jets on!`);
+        console.log(`Jets on! for this ${this.degree} class with Ms.${this.name}`);
       },
     },
     translator: {
@@ -41,3 +41,9 @@ for (let crewMember in spaceship.crew) {
     `${spaceship.crew[crewMember].name}: ${spaceship.crew[crewMember].degree}`
   );
 }
+
+
+const { crew: wholeCrew } = spaceship;
+// console.log("hi", wholeCrew);
+
+spaceship.crew.medic.announce();

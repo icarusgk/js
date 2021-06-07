@@ -1,8 +1,9 @@
 // Syntax for a Promise
 
 // The executor function generally starts an asynchronous operation
-const executorFunction = (resolve, reject) => {};
-const myFirstPromise = new Promise(executorFunction);
+const myFirstPromise = new Promise((resolve, reject) => {
+
+});
 
 // The executor function has two function parameters, usually referred to as the resolve() and reject() functions.
 
@@ -26,11 +27,20 @@ const myExecutor = (resolve, reject) => {
   }
 };
 
+const fetchInventory = (resolve, reject) => {
+  if (inventory.sunglasses < 1800) {
+    resolve("Still enough glasses.");
+  } else {
+    reject("The item is not enough at the time being.");
+  }
+}
+
 const orderSunglasses = () => {
   return new Promise(myExecutor);
 };
 
 const orderPromise = orderSunglasses();
 
-console.log(orderPromise);
+const enoughGlasses = new Promise(fetchInventory);
+console.log(enoughGlasses);
 

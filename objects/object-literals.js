@@ -15,3 +15,12 @@ let spaceship = {
 
 let crewCount = spaceship.numCrew;
 let planetArray = spaceship.flightPath;
+
+
+// To return an object with the same properties as 
+// the ones passed to the function we do this 
+const createPerson = (name, age, gender) => ({name, age, gender});
+
+// This function creates an object with this properties.
+const roger = createPerson("Roger", 20, 'M');
+console.log(roger);
